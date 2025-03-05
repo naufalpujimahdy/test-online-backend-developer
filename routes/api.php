@@ -39,6 +39,7 @@ Route::prefix('v1')->group(function () {
     Route::delete('checklists/{id}', [ChecklistController::class, 'destroy']);
 
     /********* Checklist Item *********/
+    Route::get('checklists/{checklistId}/items', [ChecklistItemController::class, 'index']);
     Route::post('checklists/{checklistId}/items', [ChecklistItemController::class, 'store']);
     Route::get('checklists/{checklistId}/items/{itemId}', [ChecklistItemController::class, 'show']);
     Route::put('checklists/{checklistId}/items/{itemId}', [ChecklistItemController::class, 'update']);
